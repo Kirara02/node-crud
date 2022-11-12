@@ -22,19 +22,21 @@
                 <div class="card-text">
                     <table class="table table-bordered table-striped">
                         <thead class="text-center">
-                            <th class="col-1">Id</th>
+                            <th class="col-1">No</th>
                             <th>Nama</th>
                             <th>Kelas</th>
                             <th class="col-2">Aksi</th>
                         </thead>
                         <tbody>
-                            <% for(let user of users) {%>
+                            <% 
+                            let i = 1;
+                            for(let user of users) {%>
                                 <tr>
-                                    <td><%= user.id %></td>
+                                    <td><%=i++ %></td>
                                     <td><%= user.nama %></td>
                                     <td><%= user.kelas %></td>
                                     <td class="text-center">  
-                                        <a href="/edit/<%= user.id %>"  class="btn btn-secondary formModal" data-bs-toggle="modal" data-id="<%= user.id %>" data-bs-target="#modalInput" >Edit</a>                                       
+                                        <a href="#"  class="btn btn-secondary formModal" data-bs-toggle="modal" data-id="<%= user.id %>" data-bs-target="#modalInput" >Edit</a>                                       
                                         <a href="/hapus/<%= user.id %>" onclick="return confirm('Hapus Data Ini?')"><button type="button" class="btn btn-danger" >Hapus</button></a>                                        
                                     </td>
                                 </tr>

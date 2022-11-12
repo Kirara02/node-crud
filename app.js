@@ -32,16 +32,16 @@ db.connect((err) => {
     })
 
     app.post('/tambah', (req, res)=> {
-        const insertSql = `insert into siswa(nama,kelas) values ('${req.body.nama}','${req.body.kelas}');`
-        db.query(insertSql, (err, result) => {
+        const Sql = `insert into siswa(nama,kelas) values ('${req.body.nama}','${req.body.kelas}');`
+        db.query(Sql, (err, result) => {
             if(err) throw err
             res.redirect('/');
         })
     })
 
     app.post('/edit/:id', (req, res)=> {
-        const insertSql = `update siswa set nama='${req.body.nama}', kelas='${req.body.kelas}' where id='${req.params.id}';`
-        db.query(insertSql, (err, result) => {
+        const Sql = `update siswa set nama='${req.body.nama}', kelas='${req.body.kelas}' where id='${req.params.id}';`
+        db.query(Sql, (err, result) => {
             if(err) throw err
             res.redirect('/');
         })
@@ -66,8 +66,6 @@ db.connect((err) => {
             res.redirect('/')
         })
     })
-
-    
 
 })
 
